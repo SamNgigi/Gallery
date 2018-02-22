@@ -1,0 +1,15 @@
+@import url('https://fonts.googleapis.com/css?family=Julius+Sans+One|Lobster|Sacramento|Open+Sans|Quicksand');
+
+
+h1{
+  font-family: 'Julius Sans One', sans-serif;
+}
+
+*{
+  /*font-family: 'Lobster', cursive;*/
+  /*font-family: 'Julius Sans One', sans-serif;*/
+  /*font-family: 'Sacramento', cursive;*/
+  font-family: 'Quicksand', sans-serif;
+  /*font-family: 'Open Sans', sans-serif;*/
+  /*font-family: 'Quicksand', sans-serif;*/
+}
