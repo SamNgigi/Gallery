@@ -30,6 +30,11 @@ class Image(models.Model):
         self.save()
 
     @classmethod
+    def get_all(cls):
+        images = cls.objects.order_by('-post_date')
+        return images
+
+    @classmethod
     def today_pics(cls):
         today = dt.date.today()
         images = cls.objects.filter(post_date__date=today)
