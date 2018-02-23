@@ -1,5 +1,14 @@
 {% extends 'base.html' %}
 {{block.super}}
 {% block content %}
-  <h1 class="text-center">Gallery!</h1>
+  <div class="container">
+    <h1 class="text-center">Gallery!</h1>
+    <ul class="text-center">
+      <li>Upload Images</li>
+      <li>Deploy</li>
+    </ul>
+  </div>
+  <div class="container">
+    <img src="{{}}" alt="" class="img-fluid" alt="Image">
+  </div>
 {% endblock %}
