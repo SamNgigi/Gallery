@@ -1,0 +1,3 @@
+ - Add more photos using net image links instead and use char field. Means model column that can store links
+ - Add 3 categories as you would tags.
+ - Add styling to expand single photo
