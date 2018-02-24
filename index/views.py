@@ -31,3 +31,28 @@ def architecture(request):
                    "test": test,
                    "date": date,
                    "architecture": architecture})
+
+
+def search_results(request):
+
+    if 'image' in request.GET and request.GET["image"]:
+        query = request.GET.get("image")
+        results = Image.searched(query)
+        message = f"{query}"
+
+        return render(request, 'results.html',
+                      {"message": message, "results": results})
+    else:
+        message = "What images do you want to search for?"
+        return render(request, 'results.html',
+                      {"message": message})
+
+
+def get_mombasa(request):
+    location_images = Image.mombasa()
+    return render(request, 'locations.html', {"images": location_images})
+
+
+def get_nairobi(request):
+    location_images = Image.nairobi()
+    return render(request, 'locations.html', {"images": location_images})

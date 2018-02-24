@@ -10,7 +10,7 @@
         <img src="{{photo.image.url}}" alt="test" class="img-fluid">
       {% endif %}
         <img src="{{photo.image_url}}" alt="test" class="img-fluid">
-      <p>{{photo.location}}</p>
+      <p><a href="{% url 'locations' %}">{{photo.location}}</a></p>
       {% for category in photo.category.all %}
         <p>{{category}}</p>
       {% endfor %}
