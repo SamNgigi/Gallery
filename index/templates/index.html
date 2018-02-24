@@ -1,15 +1,15 @@
 {% extends 'base.html' %} {{block.super}} {% block content %}
 <div class="container">
   <h1 class="text-center">Gallery!</h1>
-  <ul>
-    <li class="text-center">Deploy</li>
-  </ul>
 </div>
 <div class="container">
   <div class="row">
     {% for photo in photos %}
     <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
-      <img src="{{photo.image.url}}" alt="test" class="img-fluid">
+      {% if photo.image %}
+        <img src="{{photo.image.url}}" alt="test" class="img-fluid">
+      {% endif %}
+        <img src="{{photo.image_url}}" alt="test" class="img-fluid">
       <p>{{photo.location}}</p>
       {% for category in photo.category.all %}
         <p>{{category}}</p>

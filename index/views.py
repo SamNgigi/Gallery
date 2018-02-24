@@ -19,3 +19,15 @@ def index(request):
                    "test": test,
                    "date": date,
                    "photos": photos})
+
+
+def architecture(request):
+    title = 'Architecure'
+    test = 'Architecure!'
+    date = dt.date.today
+    photos = Image.get_all()
+    return render(request, 'index.html',
+                  {"title": title,
+                   "test": test,
+                   "date": date,
+                   "photos": photos})

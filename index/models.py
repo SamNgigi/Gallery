@@ -14,6 +14,9 @@ class Location(models.Model):
 class Category(models.Model):
     category = models.CharField(max_length=30, blank=True)
 
+    def delete_category(self):
+        self.delete()
+
     def __str__(self):
         return self.category
 
@@ -44,3 +47,7 @@ class Image(models.Model):
         today = dt.date.today()
         images = cls.objects.filter(post_date__date=today)
         return images
+
+    @classmethod
+    def get_by_category(cls):
+        pass
