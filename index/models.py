@@ -47,6 +47,6 @@ class Image(models.Model):
 
     @classmethod
     def get_architecture(cls):
-        cat_images = Image.object.filter(
-            category_name__startswith='architecture').order_by('-post_date')
+        cat_images = Image.objects.filter(
+            category__name__startswith='architecture').order_by('-post_date')
         return cat_images
