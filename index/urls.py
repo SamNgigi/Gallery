@@ -5,6 +5,7 @@ from . import views
 
 urlpatterns = [
     path('', views.index, name='welcome'),
+    path('architecture', views.architecture, name='architecture'),
 ]
 """
 We first import the project settings where we added the

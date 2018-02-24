@@ -12,13 +12,10 @@ class Location(models.Model):
 
 
 class Category(models.Model):
-    category = models.CharField(max_length=30, blank=True)
-
-    def delete_category(self):
-        self.delete()
+    name = models.CharField(max_length=30, blank=True)
 
     def __str__(self):
-        return self.category
+        return self.name
 
 
 class Image(models.Model):
@@ -49,5 +46,7 @@ class Image(models.Model):
         return images
 
     @classmethod
-    def get_by_category(cls):
-        pass
+    def get_architecture(cls):
+        cat_images = Image.object.filter(
+            category_name__startswith='architecture').order_by('-post_date')
+        return cat_images

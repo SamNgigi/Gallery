@@ -25,9 +25,9 @@ def architecture(request):
     title = 'Architecure'
     test = 'Architecure!'
     date = dt.date.today
-    photos = Image.get_all()
-    return render(request, 'index.html',
+    architecture = Image.get_architecture()
+    return render(request, 'architecture.html',
                   {"title": title,
                    "test": test,
                    "date": date,
-                   "photos": photos})
+                   "architecture": architecture})
