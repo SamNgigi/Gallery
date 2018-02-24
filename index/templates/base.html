@@ -22,7 +22,7 @@
     $(document).ready(function() {
       // Stuff to do as soon as the DOM is ready
       $('.button').click(function() {
-        var buttonId = $(this).attr('data-imageId');
+        var buttonId = $(this).attr('id');
         $('#modal-container').removeAttr('class').addClass(buttonId);
         $('body').addClass('modal-active');
       })

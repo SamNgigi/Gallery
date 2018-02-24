@@ -7,7 +7,7 @@
     {% for photo in photos %}
     <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6 ">
       {% if photo.image %}
-      <img data-imageId="{{photo.id}}" id="one" src="{{photo.image.url}}" alt="test" class="img-fluid button" > {% endif %}
+      <img id="one" src="{{photo.image.url}}" alt="test" class="img-fluid button" > {% endif %}
       <img id="one" src="{{photo.image_url}}" alt="test" class="img-fluid button">
       {% if photo.location.location == "nairobi" %}
       <p><a href="{% url 'nairobi' %}">{{photo.location}}</a></p>
@@ -29,7 +29,7 @@
 <div id="modal-container">
   <div class="modal-background">
     <div class="modal">
-      <img src="{{image.url}}" alt="test" class="img-fluid button">
+      <img src="https://s-ec.bstatic.com/images/hotel/max1280x900/129/129557988.jpg" alt="test" class="img-fluid">
     </div>
   </div>
 </div>
