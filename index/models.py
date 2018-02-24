@@ -34,10 +34,18 @@ class Image(models.Model):
     def save_image(self):
         self.save()
 
+    def delete_image(self):
+        self.delete()
+
     @classmethod
     def get_all(cls):
         images = cls.objects.order_by('-post_date')
         return images
+
+    @classmethod
+    def get_image(cls, id):
+        image = cls.objects.get(id=id)
+        return image
 
     @classmethod
     def searched(cls, query):

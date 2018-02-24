@@ -21,16 +21,9 @@ def index(request):
                    "photos": photos})
 
 
-def architecture(request):
-    title = 'Architecure'
-    test = 'Architecure!'
-    date = dt.date.today
-    architecture = Image.get_architecture()
-    return render(request, 'architecture.html',
-                  {"title": title,
-                   "test": test,
-                   "date": date,
-                   "architecture": architecture})
+def image(request):
+    image = Image.get_image()
+    return render(request, 'index.html', {"image": image})
 
 
 def search_results(request):
@@ -56,3 +49,15 @@ def get_mombasa(request):
 def get_nairobi(request):
     location_images = Image.nairobi()
     return render(request, 'locations.html', {"images": location_images})
+
+
+def architecture(request):
+    title = 'Architecure'
+    test = 'Architecure!'
+    date = dt.date.today
+    architecture = Image.get_architecture()
+    return render(request, 'architecture.html',
+                  {"title": title,
+                   "test": test,
+                   "date": date,
+                   "architecture": architecture})
