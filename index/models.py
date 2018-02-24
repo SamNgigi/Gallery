@@ -5,7 +5,10 @@ import datetime as dt
 
 class Location(models.Model):
     # TODO: Will try geolocation
-    pass
+    location = models.CharField(max_length=60, blank=True, default='nairobi')
+
+    def __str__(self):
+        return self.location
 
 
 class Category(models.Model):
@@ -17,12 +20,13 @@ class Category(models.Model):
 
 class Image(models.Model):
     image = models.ImageField(upload_to='gallery/', blank=True)
-    image_url = models.TextField()
+    image_url = models.TextField(blank=True)
     image_name = models.CharField(max_length=30, blank=True)
-    description = models.CharField(blank=True)
+    description = models.CharField(max_length=100, blank=True)
     category = models.ManyToManyField(Category, blank=True)
     post_date = models.DateTimeField(auto_now=True)
-    # location = models.ForeignKey(Location)
+    location = models.ForeignKey(
+        'Location', on_delete=models.CASCADE, blank=True)
 
     class Meta:
         ordering = ['-post_date']
