@@ -17,6 +17,24 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.13.0/popper.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
   <script defer src="https://use.fontawesome.com/releases/v5.0.6/js/all.js"></script>
+
+  <script type="text/javascript">
+    $(document).ready(function() {
+      // Stuff to do as soon as the DOM is ready
+      $('.button').click(function() {
+        var buttonId = $(this).attr('id');
+        $('#modal-container').removeAttr('class').addClass(buttonId);
+        $('body').addClass('modal-active');
+      })
+
+      $('#modal-container').click(function() {
+        $(this).addClass('out');
+        $('body').removeClass('modal-active');
+      });
+
+    });
+  </script>
+
   {% if title %}
   <title>{{title}}</title>
   {% else %}
@@ -25,6 +43,7 @@
 </head>
 
 <body>
+
   {% include 'navbar.html' %} {% block content %} {% endblock %}
 </body>
 
