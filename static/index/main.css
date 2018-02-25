@@ -250,3 +250,6 @@ div#image.flip180 {
   right: 0;
   opacity: 1;
 }
+.container2{
+  border-left: 4px solid #66ff66;
+}
