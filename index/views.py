@@ -23,7 +23,7 @@ def index(request):
 
 def image(request, image_id):
     image = Image.objects.get(id=image_id)
-    return render(request, 'index.html', {"image": image})
+    return render(request, 'image.html', {"image": image})
 
 
 def search_results(request):
