@@ -7,12 +7,34 @@ class Location(models.Model):
     # TODO: Will try geolocation
     location = models.CharField(max_length=60)
 
+    def save_locations(self):
+        self.save()
+
+    def delete_locations(self):
+        self.delete()
+
+    @classmethod
+    def update_location(cls, id, location, update):
+        updated = cls.objects.filter(id=id).update(location=update)
+        return updated
+
     def __str__(self):
         return self.location
 
 
 class Category(models.Model):
     name = models.CharField(max_length=30, blank=True)
+
+    def save_category(self):
+        self.save()
+
+    def delete_category(self):
+        self.delete()
+
+    @classmethod
+    def update_category(cls, id, category, update):
+        updated = cls.objects.filter(id=id).update(category=update)
+        return updated
 
     def __str__(self):
         return self.name
@@ -36,6 +58,11 @@ class Image(models.Model):
 
     def delete_image(self):
         self.delete()
+
+    @classmethod
+    def update_image(cls, id, target, update):
+        updated = cls.objects.filter(id=id).update(target=update)
+        return updated
 
     @classmethod
     def get_all(cls):
