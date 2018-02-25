@@ -22,34 +22,12 @@
     $(document).ready(function() {
       // Flip card to the back side
       console.log("Working");
-      $('#view-details'+'{{photo.id}}').click(function() {
-        $('div.carouselNext, div.carouselPrev').removeClass('visible');
-        $('#image').addClass('flip-10');
-        setTimeout(function() {
-          $('#image').removeClass('flip-10').addClass('flip90').find('div.shadow').show().fadeTo(80, 1, function() {
-            $('#front, #front div.shadow').hide();
-          });
-        }, 50);
 
-        setTimeout(function() {
-          $('#image').removeClass('flip90').addClass('flip190');
-          $('#back').show().find('div.shadow').show().fadeTo(90, 0);
-          setTimeout(function() {
-            $('#image').removeClass('flip190').addClass('flip180').find('div.shadow').hide();
-            setTimeout(function() {
-              $('#image').css('transition', '100ms ease-out');
-              $('#cx, #cy').addClass('s1');
-              setTimeout(function() {
-                $('#cx, #cy').addClass('s2');
-              }, 100);
-              setTimeout(function() {
-                $('#cx, #cy').addClass('s3');
-              }, 200);
-              $('div.carouselNext, div.carouselPrev').addClass('visible');
-            }, 100);
-          }, 100);
-        }, 150);
-      });
+      $('.button').click(function() {
+        var id = $(this).attr('id').split('-')[1];
+        console.log("clicked"+id);
+      })
+
     });
   </script>
 
