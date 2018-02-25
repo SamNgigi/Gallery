@@ -1,25 +1,25 @@
-
-{% extends 'base.html' %} {{block.super}} {% block content %}
+ {% extends 'base.html' %} {{block.super}} {% block content %}
 <div class="container m-auto">
-  <div id="image">
-        <div id="front"  class="zoom">
-          <div class="overlay">
-            <div class="flex green">
-              <a id="view-details{{photo.id}}" class="bttn-green button">View Details</a>
-            </div>
+  <div class="row">
+    <div id="image" class="">
+      <div id="front" class="zoom">
+        <div class="overlay">
+          <div class="flex green">
+            <a id="view-details{{photo.id}}" class="bttn-green button">View Details</a>
           </div>
-          <img src="{{image.image_url}}" alt="test" class="img-fluid">
         </div>
-        <div id="back" class="zoom">
-          <div class="shadow"></div>
-          <div class="overlay">
-            <div class="flex green">
-              <a href="#" class="bttn-green">View Details</a>
-            </div>
-          </div>
         <img src="{{image.image_url}}" alt="test" class="img-fluid">
+      </div>
+      <div id="back" class="zoom">
+        <div class="shadow"></div>
+        <div class="overlay">
+          <div class="flex green">
+            <a href="#" class="bttn-green">View Details</a>
+          </div>
         </div>
-
-
+        <img src="{{image.image_url}}" alt="test" class="img-fluid">
+      </div>
+    </div>
+  </div>
 </div>
 {% endblock %}
