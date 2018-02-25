@@ -10,7 +10,7 @@ Sam Ngigi
 
 This is an app that allows users to view photos and details about them.
 
-#### TheMIn Categories
+#### Gallery Categories
 * People
 * Nature
 * Architecture
