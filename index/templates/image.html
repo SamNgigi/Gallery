@@ -1,4 +1,13 @@
  {% extends 'base.html' %} {{block.super}} {% block content %}
+<script>
+  function myFunction() {
+    var copyText = document.getElementById("myInput");
+    copyText.select();
+    document.execCommand("Copy");
+    alert("Copied the text: " + copyText.value);
+  }
+</script>
+
 <div class="container mt-5">
   <div class="row">
     <div id="image" class="p-1">
@@ -12,9 +21,15 @@
       </div>
       <div id="back" class="zoom">
         <div class="shadow"></div>
-        <div class="overlay">
-          <div class="flex green">
-            <a href="#" class="bttn-green">View Details</a>
+        <div class="overlay1">
+          <div class="flex">
+            <div class="container">
+              <p>Location: {{image.location.location}}</p>
+              <p>Title: {{image.image_name}}</p>
+              <p>Description: {{image.description}}</p>
+              <input class="form-control" type="text" value="{{image.image_url}}" id="myInput">
+              <a onclick="myFunction()" class="bttn-green mt-3">Copy link</a>
+            </div>
             <div id="flip-back">
               <div id="cy"></div>
               <div id="cx"></div>
