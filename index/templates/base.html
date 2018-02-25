@@ -21,8 +21,8 @@
   <script type="text/javascript">
     $(document).ready(function() {
       // Flip card to the back side
-      var y = {{photo.id}}
-      $('#view-details'+'y').click(function() {
+      console.log("Working");
+      $('#view-details'+'{{photo.id}}').click(function() {
         $('div.carouselNext, div.carouselPrev').removeClass('visible');
         $('#image').addClass('flip-10');
         setTimeout(function() {
