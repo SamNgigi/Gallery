@@ -21,8 +21,8 @@ def index(request):
                    "photos": photos})
 
 
-def image(request):
-    image = Image.get_image()
+def image(request, image_id):
+    image = Image.objects.get(id=image_id)
     return render(request, 'index.html', {"image": image})
 
 
