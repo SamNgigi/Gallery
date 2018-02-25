@@ -7,14 +7,24 @@
     {% for photo in photos %}
     <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6 ">
       {% if photo.image %}
-      <img id="one" href="{% url 'single_image' image_id=photo.id %}" src="{{photo.image.url}}" alt="test" class="img-fluid button{{photo.id}}" > {% endif %}
-      <a href="{% url 'single_image' image_id=photo.id %}"><img id="one" src="{{photo.image_url}}" alt="test" class="img-fluid"> </a>
+      <div class="overlay">
+        <h2>View Details</h2>
+      </div>
+      <div class="zoom">
+        <img id="one" href="{% url 'single_image' image_id=photo.id %}" src="{{photo.image.url}}" alt="test" class="img-fluid button{{photo.id}}">
+      </div>
+      {% endif %}
+      <div class="zoom">
+        <div class="overlay">
+          <h2>View Details</h2>
+        </div>
+        <a href="{% url 'single_image' image_id=photo.id %}"><img id="one" src="{{photo.image_url}}" alt="test" class="img-fluid"> </a>
+      </div>
       {% if photo.location.location == "nairobi" %}
       <p><a href="{% url 'nairobi' %}">{{photo.location}}</a></p>
       {% elif photo.location.location == "mombasa" %}
       <p><a href="{% url 'mombasa' %}">{{photo.location}}</a></p>
-      {% endif %}
-      {% for category in photo.category.all %}
+      {% endif %} {% for category in photo.category.all %}
       <p>{{category}}</p>
       {% endfor %}
     </div>
