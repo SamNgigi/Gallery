@@ -42,7 +42,7 @@ A user can;
 
 ## Credits
 
-#### Moringa School, StackOverflow.com ,mc7.
+#### Moringa School, StackOverflow.com, CodePen.io, Github ,mc7.
 
 # Technologies Used
 
@@ -58,6 +58,8 @@ A user can;
 ### Known bugs, support and Contacts
 
 - No known bugs
+
+Incase of any please don't hesitate to send a mail to sam.t.ngigi@gmail.com. Thanks
 
 # License
 
