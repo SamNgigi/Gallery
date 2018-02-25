@@ -16,8 +16,19 @@
   {% if results %}
     {% for result in results %}
     <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
+      <div class="zoom">
+        <div class="overlay">
+          <div class="flex green">
+            <a href="{% url 'single_image' image_id=result.id %}" class="bttn-green">View Image</a>
+          </div>
+        </div>
         <img src="{{result.image_url}}" alt="test" class="img-fluid">
-      <p>{{result.location}}</p>
+      </div>
+      {% if photo.location.location == "nairobi" %}
+      <p><a href="{% url 'nairobi' %}">{{result.location}}</a></p>
+      {% elif photo.location.location == "mombasa" %}
+      <p><a href="{% url 'mombasa' %}">{{result.location}}</a></p>
+      {% endif %}
       {% for category in result.category.all %}
         <p>{{category}}</p>
       {% endfor %}
@@ -27,3 +38,4 @@
   </div>
 </div>
 {% endblock %}
+<div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
