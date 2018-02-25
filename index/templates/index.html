@@ -8,7 +8,7 @@
     <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6 ">
       {% if photo.image %}
       <img id="one" href="{% url 'single_image' image_id=photo.id %}" src="{{photo.image.url}}" alt="test" class="img-fluid button{{photo.id}}" > {% endif %}
-      <a href="{% url 'single_image' image_id=photo.id %}"><img id="one" src="{{photo.image_url}}" alt="test" class="img-fluid"> </a>
+      <img id="one"href="{% url 'single_image' image_id=photo.id %}" src="{{photo.image_url}}" alt="test" class="img-fluid button">
       {% if photo.location.location == "nairobi" %}
       <p><a href="{% url 'nairobi' %}">{{photo.location}}</a></p>
       {% elif photo.location.location == "mombasa" %}
@@ -25,13 +25,5 @@
     {% endfor %}
   </div>
 </div>
-
-<div id="modal-container">
-  <div class="modal-background">
-    <div class="modal">
-      <img src="{{image.image_url}}" alt="test" class="img-fluid">
-    </div>
-  </div>
-</div>
-
+  {% include 'image.html' %}
 {% endblock %}
