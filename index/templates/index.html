@@ -1,5 +1,4 @@
 {% extends 'base.html' %} {{block.super}} {% block content %}
-
 <div class="container">
   <h1 class="text-center">Gallery!</h1>
 </div>
@@ -17,24 +16,13 @@
         <img id="one" href="{% url 'single_image' image_id=photo.id %}" src="{{photo.image.url}}" alt="test" class="img-fluid button{{photo.id}}">
       </div>
       {% endif %}
-      <div id="image">
-        <div id="front"  class="zoom">
-          <div class="overlay">
-            <div class="flex green">
-              <a id="view-{{photo.id}}" class="bttn-green button ">View Details</a>
-            </div>
+      <div class="zoom">
+        <div class="overlay">
+          <div class="flex green">
+            <a href="{% url 'single_image' image_id=photo.id %}" class="bttn-green">View Details</a>
           </div>
-          <a href="{% url 'single_image' image_id=photo.id %}"></a><img id="one" src="{{photo.image_url}}" alt="test" class="img-fluid">
         </div>
-        <div id="back" class="zoom">
-          <div class="shadow"></div>
-          <div class="overlay">
-            <div class="flex green">
-              <a href="#" class="bttn-green">View Details</a>
-            </div>
-          </div>
-          <a href="{% url 'single_image' image_id=photo.id %}"></a><img id="one" src="{{photo.image_url}}" alt="test" class="img-fluid">
-        </div>
+        <img id="one" src="{{photo.image_url}}" alt="test" class="img-fluid">
       </div>
       {% if photo.location.location == "nairobi" %}
       <p><a href="{% url 'nairobi' %}">{{photo.location}}</a></p>
@@ -51,4 +39,13 @@
     {% endfor %}
   </div>
 </div>
+
+<div id="modal-container">
+  <div class="modal-background">
+    <div class="modal">
+      <img src="{{image.image_url}}" alt="test" class="img-fluid">
+    </div>
+  </div>
+</div>
+
 {% endblock %}

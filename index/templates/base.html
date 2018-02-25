@@ -22,12 +22,34 @@
     $(document).ready(function() {
       // Flip card to the back side
       console.log("Working");
-
       $('.button').click(function() {
-        var id = $(this).attr('id').split('-')[1];
-        console.log("clicked"+id);
-      })
+        var imageId = $(this).attr('id').split('-')[1];
+        console.log("clicked"+imageId);
+        $('#image').addClass('flip-10 imageId');
+        setTimeout(function() {
+          $('#image').removeClass('flip-10').addClass('flip90 imageId').find('div.shadow').show().fadeTo(80, 1, function() {
+            $('#front, #front div.shadow').hide();
+          });
+        }, 50);
 
+        setTimeout(function() {
+          $('#image').removeClass('flip90').addClass('flip190 imageId');
+          $('#back').show().find('div.shadow').show().fadeTo(90, 0);
+          setTimeout(function() {
+            $('#image').removeClass('flip190').addClass('flip180 imageId').find('div.shadow').hide();
+            setTimeout(function() {
+              $('#image').css('transition', '100ms ease-out');
+              $('#cx, #cy').addClass('s1 imageId');
+              setTimeout(function() {
+                $('#cx, #cy').addClass('s2 imageId');
+              }, 100);
+              setTimeout(function() {
+                $('#cx, #cy').addClass('s3 imageId');
+              }, 200);
+            }, 100);
+          }, 100);
+        }, 150);
+      })
     });
   </script>
 
