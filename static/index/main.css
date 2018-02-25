@@ -160,3 +160,66 @@ div#image.flip180 {
   transform: rotateY( 180deg);
   transition: 150ms ease-out;
 }
+
+#flip-back {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  width: 30px;
+  height: 30px;
+  cursor: pointer;
+}
+
+#cx,
+#cy {
+  background: #d2d5dc;
+  position: absolute;
+  width: 0px;
+  top: 15px;
+  height: 3px;
+  transition: all 250ms ease-in-out;
+}
+
+#flip-back:hover #cx,
+#flip-back:hover #cy {
+  background: #979ca7;
+  transition: all 250ms ease-in-out;
+}
+
+#cx.s1,
+#cy.s1 {
+  right: 0;
+  width: 30px;
+  transition: all 100ms ease-out;
+}
+
+#cy.s2 {
+  transform: rotate(50deg);
+  transition: all 100ms ease-out;
+}
+
+#cy.s3 {
+  transform: rotate(45deg);
+  transition: all 100ms ease-out;
+}
+
+#cx.s1 {
+  right: 0;
+  width: 30px;
+  transition: all 100ms ease-out;
+}
+
+#cx.s2 {
+  transform: rotate(140deg);
+  transition: all 100ms ease-out;
+}
+
+#cx.s3 {
+  transform: rotate(135deg);
+  transition: all 100ms ease-out;
+}
+
+
+#image{
+  box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.16), 10px 7px 6px rgba(0, 0, 0, 0.1);
+}

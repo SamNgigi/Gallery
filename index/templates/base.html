@@ -24,7 +24,7 @@
       console.log("Working");
       $('.button').click(function() {
         var imageId = $(this).attr('id').split('-')[1];
-        console.log("clicked"+imageId);
+        console.log("clicked" + imageId);
         $('#image').addClass('flip-10 imageId');
         setTimeout(function() {
           $('#image').removeClass('flip-10').addClass('flip90 imageId').find('div.shadow').show().fadeTo(80, 1, function() {
@@ -50,6 +50,32 @@
           }, 100);
         }, 150);
       })
+
+      $('#flip-back').click(function() {
+
+        $('#image').removeClass('flip180').addClass('flip190');
+        setTimeout(function() {
+          $('#image').removeClass('flip190').addClass('flip90');
+
+          $('#back div.shadow').css('opacity', 0).fadeTo(100, 1, function() {
+            $('#back, #back div.shadow').hide();
+            $('#front, #front div.shadow').show();
+          });
+        }, 50);
+
+        setTimeout(function() {
+          $('#image').removeClass('flip90').addClass('flip-10');
+          $('#front div.shadow').show().fadeTo(100, 0);
+          setTimeout(function() {
+            $('#front div.shadow').hide();
+            $('#image').removeClass('flip-10').css('transition', '100ms ease-out');
+            $('#cx, #cy').removeClass('s1 s2 s3');
+          }, 100);
+        }, 150);
+
+      });
+
+
     });
   </script>
 

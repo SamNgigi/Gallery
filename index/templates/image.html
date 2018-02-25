@@ -1,7 +1,7 @@
  {% extends 'base.html' %} {{block.super}} {% block content %}
-<div class="container m-auto">
+<div class="container mt-5">
   <div class="row">
-    <div id="image" class="">
+    <div id="image" class="p-1">
       <div id="front" class="zoom">
         <div class="overlay">
           <div class="flex green">
@@ -15,6 +15,10 @@
         <div class="overlay">
           <div class="flex green">
             <a href="#" class="bttn-green">View Details</a>
+            <div id="flip-back">
+              <div id="cy"></div>
+              <div id="cx"></div>
+            </div>
           </div>
         </div>
         <img src="{{image.image_url}}" alt="test" class="img-fluid">
