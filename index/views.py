@@ -22,7 +22,7 @@ def index(request):
 
 
 def image(request, image_id):
-    image = Image.objects.get(id=image_id)
+    image = Image.get_image(image_id)
     return render(request, 'image.html', {"image": image})
 
 

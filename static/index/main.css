@@ -1,4 +1,7 @@
 @import url('https://fonts.googleapis.com/css?family=Julius+Sans+One|Lobster|Sacramento|Open+Sans|Quicksand');
+body{
+  background-color: #e6e6e6;;
+}
 h1 {
   font-family: 'Julius Sans One', sans-serif;
 }
